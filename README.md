@@ -1,4 +1,4 @@
-<img width="1315" height="743" alt="image" src="https://github.com/user-attachments/assets/69bf624f-6b86-4c42-bf4d-82a48ca6a487" /># MCMultiChunk
+# MCMultiChunk
 Allow multiple clients to act as server to pre load chunks simultaneously using Chunky and send it back to a Git server using *rclone*, *docker*
 
 
