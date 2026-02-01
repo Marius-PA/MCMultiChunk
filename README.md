@@ -13,6 +13,7 @@ end
 box rgba(100,100,90,0.5) server
 participant http server
 participant git@{ "type" : "database" }
+participant a as main mc server
 end
     script->> http server: http get request with stats as vars (curl/wget)
     http server ->> script: rcon/git command in http response
@@ -21,7 +22,15 @@ end
     else is stop command
     script ->> MC server: stop generation & server
     note over script: git add && git commit
-    note over script: git pull & resolve conflict (doesnt have priority)
+    script ->> git: git pull
+    note over script: solve conflict (doesnt have priority)
     script ->> git: git push
     end
+
+opt on shutdown
+ note over a: git add & git commit
+ a ->> git: git pull
+ note over a: solve confilt (has priority)
+ a ->> git: git push
+end
 ```
