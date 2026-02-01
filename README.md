@@ -4,7 +4,7 @@ Allow multiple clients to act as server to pre load chunks simultaneously using 
 
 
 ## how it works
-```
+```mermaid
 sequenceDiagram
 box rgba(33,66,99,0.5) pc 1
 participant MC server
